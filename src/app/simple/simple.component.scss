@@ -1,0 +1,11 @@
+.back-button {
+    cursor: pointer;
+}
+
+.left {
+    flex: 0 0 65%; /* Fixed to 65% of the container width */
+}
+
+.right {
+    flex: 1; /* Takes up the remaining space */
+}

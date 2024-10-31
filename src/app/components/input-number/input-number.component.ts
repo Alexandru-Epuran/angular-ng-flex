@@ -16,7 +16,7 @@ export class InputNumberComponent {
     @Input() buttonLayout: "stacked" | "horizontal" | "vertical" = "stacked";
     @Input() inputId?: string;
     @Input() styleClass?: string;
-    @Input() style?: object;
+    @Input() style?: any;
     @Input() placeholder?: string;
     @Input() size?: number;
     @Input() maxlength?: number | any | null;

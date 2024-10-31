@@ -2,6 +2,7 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
 
 ul {
     list-style-type: none;
@@ -14,4 +15,16 @@ li a {
     text-decoration: none;
     list-style-type: none;
     height: 100% !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
 }

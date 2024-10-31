@@ -1,0 +1,18 @@
+:host ::ng-deep .p-element {
+    width: 100%;
+    height: 60px;
+}
+
+:host ::ng-deep .p-inputtext {
+    border: 2px solid rgba(70, 70, 70, 0.651);
+    border-radius: 4px;
+    width: 100%;
+}
+
+:host ::ng-deep .p-inputtext:enabled:focus {
+    box-shadow: 0 0 0 0.2rem rgb(218, 218, 218);
+}
+
+:host ::ng-deep .p-component {
+    width: 100%;
+}
