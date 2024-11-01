@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { InputSwitchModule } from "primeng/inputswitch";
+import { InputSwitchChangeEvent, InputSwitchModule } from "primeng/inputswitch";
 
 @Component({
     selector: "app-input-switch",
@@ -24,9 +24,12 @@ export class InputSwitchComponent {
     @Input() autofocus = false;
     @Input() checked = false;
 
-    @Output() onChange = new EventEmitter<{ originalEvent: Event; checked: boolean }>();
+    @Output() onChange = new EventEmitter<InputSwitchChangeEvent>();
+    @Output() checkedChange = new EventEmitter<boolean>();
 
-    handleChange(event: any) {
+    handleChange(event: InputSwitchChangeEvent) {
+        this.checked = event.checked;
+        this.checkedChange.emit(this.checked);
         this.onChange.emit(event);
     }
 }

@@ -30,6 +30,42 @@
                 </div>
             </div>
         </div>
+        <div *ngIf="expertModeEnabled" class="second-title mb-3 mt-2 pl-3">
+            <h4>Lorem lorem</h4>
+        </div>
+        <div *ngIf="expertModeEnabled" class="input-container-expert">
+            <div class="grid">
+                <div class="col-6 px-4">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+                <div class="col-6 px-4">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+                <div class="col-6 px-4">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+                <div class="col-6 px-4">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+                <div class="col-6 px-4">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+                <div class="col-6 px-4">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+            </div>
+            <div class="grid px-3 mt-1 flex gap-5">
+                <div class="col">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+                <div class="col">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+                <div class="col">
+                    <app-input-number placeholder="placeholder 1"></app-input-number>
+                </div>
+            </div>
+        </div>
 
         <div class="third-title mb-3 mt-2 pl-3">
             <h4>Lorem</h4>
@@ -53,8 +89,8 @@
                 </div>
             </div>
         </div>
-        <div class="pl-3 flex align-items-center gap-3 expermodus">
-            <app-input-switch></app-input-switch>
+        <div class="pl-3 flex align-items-center gap-3 expertmodus">
+            <app-input-switch [(checked)]="expertModeEnabled"></app-input-switch>
             <p>Expermodus</p>
         </div>
     </div>
