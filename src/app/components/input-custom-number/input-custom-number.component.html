@@ -1,0 +1,34 @@
+<div class="flex align-items-center p-inputgroup">
+    <span class="p-inputgroup-addon" *ngIf="addon && addon.length && addonPosition === 'left'" [ngClass]="inputGroupAddonClass">{{ addon }}</span>
+
+    <span class="p-float-label">
+        <p-inputNumber
+            [placeholder]="placeholder"
+            [inputStyleClass]="inputStyleClass"
+            [minFractionDigits]="minFractionDigits"
+            [maxFractionDigits]="maxFractionDigits"
+            [useGrouping]="useGrouping"
+            [locale]="locale"
+            [required]="required"
+            [disabled]="disabled"
+            [(ngModel)]="value"
+            [inputId]="inputId"
+            [maxlength]="maxlength"
+            [mode]="mode"
+            (onInput)="onInput.emit($event)"
+            (onBlur)="onBlur.emit($event)"
+            styleClass="w-full">
+        </p-inputNumber>
+        <label *ngIf="label && label.length" for="inputId" class="white-space-nowrap overflow-x-clip text-overflow-ellipsis"
+            >{{ label }} <ng-container *ngIf="required">*</ng-container></label
+        >
+    </span>
+    <span *ngIf="addon && addon.length && addonPosition === 'right'" class="p-inputgroup-addon" [ngClass]="inputGroupAddonClass">{{ addon }}</span>
+    <button
+        *ngIf="showClear && value !== null"
+        type="button"
+        class="p-button p-button-icon-only p-button-transparent clear-icon"
+        (click)="onClear.emit()">
+        <i class="pi pi-times text-xs font-bold"></i>
+    </button>
+</div>
