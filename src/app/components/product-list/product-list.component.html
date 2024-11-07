@@ -1,0 +1,7 @@
+<div class="p-1" *ngIf="products$ | async as products">
+    <div class="product-item p-1" *ngFor="let product of products">
+        <p class="mb-1 font-semibold">{{ product.name }}</p>
+        <span class="mr-2">{{ product.price | currency }}</span>
+        <button (click)="onAddToCart(product)" data-test="add-button">Add to Cart</button>
+    </div>
+</div>
