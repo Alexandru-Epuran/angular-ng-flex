@@ -5,8 +5,9 @@ import { provideStore } from "@ngrx/store";
 import { provideEffects } from "@ngrx/effects";
 import { provideStoreDevtools } from "@ngrx/store-devtools";
 import { cartReducer, productsReducer } from "./store/reducers/items.reducer";
-import { provideHttpClient } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, provideHttpClient } from "@angular/common/http";
 import { CartEffects } from "./store/effects/items.effects";
+import { ApiMockService } from "./api/api-mock.service";
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -17,6 +18,11 @@ export const appConfig: ApplicationConfig = {
             cart: cartReducer,
         }),
         provideHttpClient(),
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ApiMockService,
+            multi: true,
+        },
         provideEffects([CartEffects]),
         provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     ],
